@@ -4,7 +4,7 @@
   <link rel="icon" href="data:,">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>沙县一中 · 像素寻路</title>
+  <title>老牧师 的 像素寻路</title>
   <style>
     html, body {
       margin: 0; padding: 0; background-color: #1A1A2E;
@@ -123,17 +123,17 @@
         <span id="weather-icon" style="font-size: 22px;">☀️</span>
         <span id="clock-text">07:30</span>
       </div>
-      <div id="task-counter">✅ 已完成任务: 0</div>
+      <div id="task-counter">✅ 已完成牧师任务: 0</div>
       <div id="item-counter">📜 神秘纸条: 0</div>
-      <button id="back-btn">返回校园</button>
+      <button id="back-btn">返回牧师校园</button>
     </div>
 
     <div id="tutorial-panel">
-      <h2>欢迎来到沙县一中</h2>
+      <h2>欢迎来到沙县老牧师一中</h2>
       <p><strong>【操作指南】</strong><br>点击或触摸建筑自动寻路。进入建筑后点击对话框推进对话。</p>
-      <p><strong>【时间与天气】</strong><br>完成对话会流逝 1 小时。若遇下雨天，室外场地将没有同学。</p>
+      <p><strong>【时间与天气】</strong><br>完成对话会流逝 1 小时。若遇下雨天，室外场地将没有牧师同学。</p>
       <p><strong>💡 累计完成 4 个任务，若带有纸条，或许会开启不同的命运……</strong></p>
-      <button id="tutorial-btn">我知道了，开始探索</button>
+      <button id="tutorial-btn">我知道了，开始扫码</button>
     </div>
 
     <div id="vn-overlay">
@@ -440,22 +440,21 @@
     const hiddenText = [
       { text: "沙县一中", size: 36, color: "#FFB84D", spacing: 60 },
       { text: "始于1923年", size: 28, color: "#FFFFFF", spacing: 50 },
-      { text: "这所百年学校经历了抗日", size: 24, color: "#E8E8F0", spacing: 40 },
-      { text: "也经历过解放", size: 24, color: "#E8E8F0", spacing: 40 },
-      { text: "一直到现在还焕发着生机", size: 24, color: "#E8E8F0", spacing: 40 },
-      { text: "我有幸来到沙县一中", size: 24, color: "#E8E8F0", spacing: 40 },
-      { text: "亲身感受了沙县一中浓厚的历史", size: 24, color: "#E8E8F0", spacing: 40 },
-      { text: "它值得去践行百余年的中国梦", size: 24, color: "#E8E8F0", spacing: 40 },
-      { text: "去为中华民族的复兴出自己的一份力量", size: 24, color: "#E8E8F0", spacing: 40 },
+      { text: "这所百年学校是个老牧师学校", size: 24, color: "#E8E8F0", spacing: 40 },
+      { text: "经历过解放奶蛙", size: 24, color: "#E8E8F0", spacing: 40 },
+      { text: "一直到现在还焕发着冰冰冰生机", size: 24, color: "#E8E8F0", spacing: 40 },
+      { text: "我倒霉来到沙县一中", size: 24, color: "#E8E8F0", spacing: 40 },
+      { text: "亲身感受了沙县一中浓厚的老牧师历史", size: 24, color: "#E8E8F0", spacing: 40 },
+      { text: "它值得去践行百余年的思慕梦", size: 24, color: "#E8E8F0", spacing: 40 },
+      { text: "去为它的什么小小呼吸机？, size: 24, color: "#E8E8F0", spacing: 40 },
       { text: "让我们继续", size: 24, color: "#FFB84D", spacing: 40 },
-      { text: "继续平稳的航行下去", size: 24, color: "#FFB84D", spacing: 40 },
-      { text: "直到到达那个共产主义的彼岸", size: 28, color: "#FF4D4D", spacing: 60 },
+      { text: "继续平稳的滚木啊？", size: 24, color: "#FFB84D", spacing: 40 },
+      { text: "直到到达那个没有牧师的世界", size: 28, color: "#FF4D4D", spacing: 60 },
       { text: "加油各位", size: 26, color: "#FFB84D", spacing: 40 },
-      { text: "加油一中", size: 32, color: "#FFB84D", spacing: 80 }
+      { text: "沙雕一中", size: 32, color: "#FFB84D", spacing: 80 }
     ];
 
     function preload() {
-      console.log("preload 函数被调用了！");
       siyuanBgImg = loadImage('siyuan_bg.jpg', () => {}, () => { console.log('未找到 siyuan_bg.jpg'); });
       trackBgImg = loadImage('track_bg.jpg', () => {}, () => { console.log('未找到 track_bg.jpg'); });
       shaoenMorningImg = loadImage('shaoen_morning.jpg', () => {}, () => { console.log('未找到 shaoen_morning.jpg'); });
@@ -631,7 +630,7 @@
     function draw() {
       if (currentState === "TITLE") {
         background("#1A1A2E"); textAlign(CENTER, CENTER);
-        fill("#FFB84D"); textSize(64); text("沙县一中 · 像素寻路", width / 2, height / 2 - 60);
+        fill("#FFB84D"); textSize(64); text("老牧师 的 像素寻路", width / 2, height / 2 - 60);
         const alpha = map(sin(frameCount * 0.05), -1, 1, 50, 255);
         fill(255, 255, 255, alpha); textSize(18); text("按 任 意 键 或 点 击 屏 幕 开 始", width / 2, height / 2 + 160);
         return;
@@ -659,7 +658,7 @@
  if (nightPhase === 2 && !isFireEscaped) {
         fireTimer -= deltaTime;
         if (fireTimer <= 0) {
-          triggerGameOver("火灾发生时你没有及时逃出教学楼，被浓烟熏倒了...");
+          triggerGameOver("火灾来了居然不逃？有点意思.");
           return;
         }
       }
@@ -886,53 +885,53 @@
       if (zone.id === "siyuan") {
         if (!shared.visitedZones.includes("siyuan")) {
           startDialogue([
-            { speaker: "同学", text: "嘿！刚好遇到你，要不要一起去小卖部买瓶水？" },
-            { speaker: "主角", text: "好啊，正好有点渴了。" },
-            { speaker: "旁白", text: "你们来到饮水机前，水龙头好像有点漏水，水滴到处乱飞。" },
-            { speaker: "同学", text: "快！帮我接住几滴，别浪费了！" }
+            { speaker: "牧师同学", text: "嘿，滚木兄！刚好遇到你这个老牧师的，要不要一起去小卖部买瓶水来洗澡？" },
+            { speaker: "滚木主角", text: "好啊，正好有点力竭了。" },
+            { speaker: "啥子旁白", text: "你们来到饮水机前，水龙头好像有点漏水，水滴到处乱飞。" },
+            { speaker: "牧师同学", text: "快！你个傻子帮我接住几滴，别浪费了！" }
           ], () => {
             shared.visitedZones.push("siyuan");
             advanceTime();
             startWaterGame();
           });
         } else {
-          startDialogue([ { speaker: "同学", text: "刚才的水真好喝，下次再一起去啊。" } ], finishNormalZone);
+          startDialogue([ { speaker: "牧师同学", text: "刚才的水是个宝啊，下次再一起去啊。" } ], finishNormalZone);
         }
         return;
       }
 
       if (zone.id === "yuxiu") {
         if (isNightStudy) {
-          if (nightPhase === 1) startDialogue([ { speaker: "旁白", text: "水管已经修好了。" } ], finishNormalZone);
+          if (nightPhase === 1) startDialogue([ { speaker: "啥子旁白", text: "水管已经炸上天了。居然没事吗" } ], finishNormalZone);
           else if (nightPhase === 3) startNightStudyPhase3();
           return;
         }
 
         if (!shared.visitedZones.includes("yuxiu")) {
           startDialogue([
-            { speaker: "班主任", text: "同学们，今天下午大扫除，大家分工合作，把各自负责的区域打扫干净。" },
-            { speaker: "班主任", text: "你，带几个同学去格致楼一楼的平台那边，把落叶和杂物清理一下。" },
-            { speaker: "主角", text: "收到！大家跟我来。" },
-            { speaker: "旁白", text: "你和同学们拿着扫把和簸箕来到格致楼一楼平台。" },
-            { speaker: "同学", text: "哈哈，平时觉得打扫卫生挺累的，大家一起干还挺有意思的。" },
-            { speaker: "旁白", text: "大家有说有笑，齐心协力地完成了大扫除。" }
+            { speaker: "xx班主任", text: "同学们，今天下午大扫除，大家分工合作，把各自负责的区域打扫干净。" },
+            { speaker: "xx班主任", text: "你，带几个同学去格致楼一楼的平台那边，把落叶和杂物清理一下。" },
+            { speaker: "滚木主角", text: "收到！大家跟我来。" },
+            { speaker: "啥子旁白", text: "你和同学们拿着扫把和簸箕来到格致楼一楼平台。" },
+            { speaker: "牧师同学2", text: "哈哈，耙地还是太爽了，我耙死你们。" },
+            { speaker: "啥子旁白", text: "大家“有说有笑”，齐心协力地完成了大扫除。" }
           ], () => {
             shared.visitedZones.push("yuxiu");
-            shared.helpedList.add("班主任");
+            shared.helpedList.add("xx班主任");
             shared.tasksCompleted += 1; 
             advanceTime();
             updateTaskUI();
             textEl.innerHTML = "（大扫除完成，点击右上角返回校园）";
-            globalLog.push({ speaker: "旁白", text: "【任务完成】协助班主任完成了大扫除。" });
+            globalLog.push({ speaker: "旁白", text: "【任务完成】协助xx班主任完成了大扫除。" });
           });
         } else {
-          startDialogue([ { speaker: "班主任", text: "辛苦了，干得不错！" } ], finishNormalZone);
+          startDialogue([ { speaker: "xx班主任", text: "哦呦，这么会干，辛苦了，干得不错！" } ], finishNormalZone);
         }
         return;
       }
 
       if (zone.id === "meiyuan" || zone.id === "zhuyuan") {
-        startDialogue([ { speaker: "宿管阿姨", text: "哎哎哎，站住！你是男生，不能进入女生宿舍。" } ], () => {
+        startDialogue([ { speaker: "啥教官, text: "哎哎哎，站住！你个滚木，不能进入女生宿舍。" } ], () => {
           textEl.innerHTML = "（点击右上角返回校园）"; speakerEl.textContent = "";
         });
         return;
@@ -941,19 +940,19 @@
       if (zone.id === "ruyuan" || zone.id === "guiyuan") {
         if (!shared.visitedZones.includes("dorm_cleaning")) {
           startDialogue([
-            { speaker: "教官", text: "站住！你们几个，刚好，今天轮到你们负责走廊的卫生了。" },
-            { speaker: "主角", text: "啊？又打扫……教官，我们作业还没写完呢。" },
-            { speaker: "舍友", text: "就是啊，这走廊看着挺干净的啊。" },
-            { speaker: "教官", text: "少废话，一屋不扫何以扫天下？赶紧去拿扫把！" },
-            { speaker: "旁白", text: "你和舍友虽然嘴上抱怨，但还是老老实实拿起了扫把。" },
-            { speaker: "旁白", text: "走廊上散落着很多用过的废纸团，似乎写着什么。" }
+            { speaker: "啥教官", text: "站住！你们几个，刚好，今天轮到你们负责走廊的卫生了。" },
+            { speaker: "滚木主角", text: "啊？去你大坝的……教官，我们作业还没写完呢。" },
+            { speaker: "某某舍友", text: "就是啊，这滚木走廊看着挺干净的啊。要不我帮你扫扫看" },
+            { speaker: "啥教官", text: "少废话，一屋不扫何以扫天下？赶紧去拿扫把！给我扫天下去" },
+            { speaker: "啥子旁白", text: "你和舍友虽然嘴上抱怨，但还是老老实实拿起了扫把。" },
+            { speaker: "啥子旁白", text: "走廊上散落着很多用过的废纸团，似乎写着什么。" }
           ], () => {
             shared.visitedZones.push("dorm_cleaning");
             advanceTime();
             startCleaningGame();
           });
         } else {
-          startDialogue([ { speaker: "教官", text: "走廊很干净，上次干得不错，去吧。" } ], finishNormalZone);
+          startDialogue([ { speaker: "啥教官", text: "天都很干净，下上次干得不错，去吧。" } ], finishNormalZone);
         }
         return;
       }
@@ -961,15 +960,15 @@
       if (zone.id === "sanli") {
         if (!shared.visitedZones.includes("sanli")) {
           startDialogue([
-            { speaker: "旁白", text: "你走进三立堂，这里正在举行数学建模社团的活动。" },
-            { speaker: "团委老师", text: "各位同学，今天我们在这里复习集合的知识，刚好遇到你。" },
-            { speaker: "团委老师", text: "你能帮我把这些关于集合的易错判断题快速过一遍吗？要在15秒内答对15道哦！" },
-            { speaker: "主角", text: "没问题，交给我吧！" }
+            { speaker: "啥子旁白", text: "你走进三立堂，这里正在举行数学建模社团的活动。" },
+            { speaker: "尊敬团委老师", text: "各位同学，今天我们在这里复习团知识，刚好遇到你。" },
+            { speaker: "尊敬团委老师", text: "你能帮我把这些关于团员的易错判断题快速过一遍吗？要在15秒内答对15道哦！" },
+            { speaker: "滚木主角", text: "没问题，交给我吧！" }
           ], () => {
             shared.visitedZones.push("sanli"); advanceTime(); startSetGame();
           });
         } else {
-          startDialogue([ { speaker: "团委老师", text: "感谢你刚才的帮忙，集合的易错点大家现在都清楚了。" } ], finishNormalZone);
+          startDialogue([ { speaker: "尊敬团委老师", text: "感谢你刚才的帮忙，团员的易错点大家现在都清楚了。" } ], finishNormalZone);
         }
         return;
       }
